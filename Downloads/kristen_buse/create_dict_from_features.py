@@ -22,7 +22,7 @@ ud_graphs_path = '/Users/kb7777822/Downloads/kristen_buse/Graphs_with_word_label
 du_graphs_path = '/Users/kb7777822/Downloads/kristen_buse/Graphs_with_word_labels_(and_timestamps!)/du_graphs_words'
 
 #If true, this generates a separate file for each user. If false, all users' data gets clumped together.
-generate_individual_dicts = True
+generate_individual_dicts = False
 
 if generate_individual_dicts: 
     
@@ -153,14 +153,16 @@ else:
             with open(dd_graphs_path + '/' + file, 'r') as dd_graphs:
                 for line in dd_graphs:
                     split_line = line.split()
-                    if dd_graphs_words_dict.get(split_line[0]) == None:              
-                       dd_graphs_words_dict[split_line[0]] = {}
-                       dd_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
-                    else:
-                       if dd_graphs_words_dict[split_line[0]].get(split_line[3]) == None:
-                           dd_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
-                       else:
-                           dd_graphs_words_dict[split_line[0]][split_line[3]] += [int(split_line[1])]
+                    if split_line[3] != '%':
+                        if len(split_line[3]) < 20:
+                            if dd_graphs_words_dict.get(split_line[0]) == None:              
+                               dd_graphs_words_dict[split_line[0]] = {}
+                               dd_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
+                            else:
+                               if dd_graphs_words_dict[split_line[0]].get(split_line[3]) == None:
+                                   dd_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
+                               else:
+                                   dd_graphs_words_dict[split_line[0]][split_line[3]] += [int(split_line[1])]
         dd_dict_file.write(str(dd_graphs_words_dict))
 
     with open('/Users/kb7777822/Downloads/kristen_buse/Graph_dicts_(for_histogram_purposes)/uu_dict_all.txt','w') as uu_dict_file:
@@ -169,14 +171,16 @@ else:
             with open(uu_graphs_path + '/' + file, 'r') as uu_graphs:
                 for line in uu_graphs:
                     split_line = line.split()
-                    if uu_graphs_words_dict.get(split_line[0]) == None:              
-                       uu_graphs_words_dict[split_line[0]] = {}
-                       uu_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
-                    else:
-                       if uu_graphs_words_dict[split_line[0]].get(split_line[3]) == None:
-                           uu_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
-                       else:
-                           uu_graphs_words_dict[split_line[0]][split_line[3]] += [int(split_line[1])]
+                    if split_line[3] != '%':
+                        if len(split_line[3]) < 20:
+                            if uu_graphs_words_dict.get(split_line[0]) == None:              
+                               uu_graphs_words_dict[split_line[0]] = {}
+                               uu_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
+                            else:
+                               if uu_graphs_words_dict[split_line[0]].get(split_line[3]) == None:
+                                   uu_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
+                               else:
+                                   uu_graphs_words_dict[split_line[0]][split_line[3]] += [int(split_line[1])]
         uu_dict_file.write(str(uu_graphs_words_dict))
     
     with open('/Users/kb7777822/Downloads/kristen_buse/Graph_dicts_(for_histogram_purposes)/ud_dict_all.txt','w') as ud_dict_file:
@@ -186,14 +190,16 @@ else:
                 with open(ud_graphs_path + '/' + file, 'r') as ud_graphs:
                     for line in ud_graphs:
                         split_line = line.split()
-                        if ud_graphs_words_dict.get(split_line[0]) == None:              
-                           ud_graphs_words_dict[split_line[0]] = {}
-                           ud_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
-                        else:
-                           if ud_graphs_words_dict[split_line[0]].get(split_line[3]) == None:
-                               ud_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
-                           else:
-                               ud_graphs_words_dict[split_line[0]][split_line[3]] += [int(split_line[1])]
+                        if split_line[3] != '%':
+                            if len(split_line[3]) < 20:
+                                if ud_graphs_words_dict.get(split_line[0]) == None:              
+                                   ud_graphs_words_dict[split_line[0]] = {}
+                                   ud_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
+                                else:
+                                   if ud_graphs_words_dict[split_line[0]].get(split_line[3]) == None:
+                                       ud_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
+                                   else:
+                                       ud_graphs_words_dict[split_line[0]][split_line[3]] += [int(split_line[1])]
         ud_dict_file.write(str(ud_graphs_words_dict))
     
     with open('/Users/kb7777822/Downloads/kristen_buse/Graph_dicts_(for_histogram_purposes)/du_dict_all.txt','w') as du_dict_file:
@@ -202,14 +208,16 @@ else:
             with open(du_graphs_path + '/' + file, 'r') as du_graphs:
                 for line in du_graphs:
                     split_line = line.split()
-                    if du_graphs_words_dict.get(split_line[0]) == None:              
-                       du_graphs_words_dict[split_line[0]] = {}
-                       du_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
-                    else:
-                       if du_graphs_words_dict[split_line[0]].get(split_line[3]) == None:
-                           du_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
-                       else:
-                           du_graphs_words_dict[split_line[0]][split_line[3]] += [int(split_line[1])]
+                    if split_line[3] != '%':
+                        if len(split_line[3]) < 20:
+                            if du_graphs_words_dict.get(split_line[0]) == None:              
+                               du_graphs_words_dict[split_line[0]] = {}
+                               du_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
+                            else:
+                               if du_graphs_words_dict[split_line[0]].get(split_line[3]) == None:
+                                   du_graphs_words_dict[split_line[0]][split_line[3]] = [int(split_line[1])]
+                               else:
+                                   du_graphs_words_dict[split_line[0]][split_line[3]] += [int(split_line[1])]
         du_dict_file.write(str(du_graphs_words_dict))    
 
     m_graphs.close()
