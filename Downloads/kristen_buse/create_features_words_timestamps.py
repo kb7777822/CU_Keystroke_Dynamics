@@ -5,8 +5,16 @@ Created on Mon Jun  8 13:25:50 2020
 
 @author: Kristen Buse
 
-This generates the m monographs and the dd, ud, uu, and du digraphs for each user, 
-as well as the word the user was typing and the timestamp.
+This takes as input a directory, with files titled [user].txt. These files have
+on each line, 3 things, separated by spaces: a timestamp, a 0 or 1 indicating
+if a key was pressed or released, and the key being pressed/released.
+
+This generates, for each user, 5 files titled 
+[graph type]_graphs_words_[user].txt, with the 5 graph types being m, dd, uu, 
+ud, and du. Each file has, on each line, separated by a space, the symbols 
+that make up the graph, the length of the graph, the timestamp, and the word
+the graph is in.
+
 A few notes: 
 Files are saved in the same directory with the name 
 [type of graph]_graphs_words_[user].txt
@@ -45,8 +53,10 @@ for file in os.listdir(raw_path):
         current_line = line.split()
         timestamp = int(current_line[0])
         
+        
         #This block of code determines the word we're in.
         if not inWord:
+            last_timestamp = 0
             if len(current_line[2]) == 1:
                 inWord = True
                 current_file_position = raw_data.tell()

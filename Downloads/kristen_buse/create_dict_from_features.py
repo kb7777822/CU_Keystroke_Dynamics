@@ -5,14 +5,19 @@ Created on Thu Jun 11 12:38:27 2020
 
 @author: Kristen Buse
 
+This takes the output of create_features_words_timestamps.py and puts it in
+a format compatible with create_histograms_words.py and get_interesting_graphs.py.
 
-Alright so the idea of this program is to convert word-features to dicts, which are saved as text files.
-There are two levels of dicts: graph and the specific word that graph appears in. At dict[graph][word]
-is a list of the graphs that occur in this word.
+This program takes as input the five directories to the output of 
+create_features_words_timestamps.py
+It generates, for each user, a file titled [graph type]_dict_[user].txt, which
+is a text file that evals to a nested dictionary whose keys are graphs and whose
+values are dictionaries whose keys are words and whose values are lists of
+the lengths of the graph as it occurs in that word.
+
 
 """
 import os
-
 
 
 m_graphs_path = '/Users/kb7777822/Downloads/kristen_buse/Graphs_with_word_labels_(and_timestamps!)/m_graphs_words'
@@ -24,6 +29,7 @@ du_graphs_path = '/Users/kb7777822/Downloads/kristen_buse/Graphs_with_word_label
 #If true, this generates a separate file for each user. If false, all users' data gets clumped together.
 generate_individual_dicts = False
 
+#TODO: remove all the repetition in this code whoops
 if generate_individual_dicts: 
     
     #m monographs
