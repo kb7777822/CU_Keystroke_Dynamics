@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    {% load static %}
+    <script src={% static "snake/animation.js" %} type="text/javascript" ></script>
+
+</head>
+
+<body onload="createSnakes()">
+obviously obviously change createSnakes
+   <canvas id = "board" width="500" height="500"></canvas>
+   <button onclick="dummy()">dummy (thicc)</button>
+   <span id="error" class="error"></span>
+
+hi
+
+<script>
+    //window.onload = draw;
+    //window.setInterval(getSnakes, 500);
+    window.setInterval(listenForKeys,500);
+    var bwidth = 500;
+    var rsquares = 9;
+    var spacing = 5;
+</script>
+
+</body>
+</html>
