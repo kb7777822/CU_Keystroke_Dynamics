@@ -1,4 +1,0 @@
-https://stackoverflow.com/questions/44630642/is-it-possible-to-store-an-array-in-django-model
-https://docs.djangoproject.com/en/3.2/ref/contrib/postgres/fields/#arrayfield
-https://www.geeksforgeeks.org/how-to-detect-keypress-using-javascript/
-https://www.postgresql.org/docs/14/tutorial-createdb.html
